@@ -1,0 +1,37 @@
+<h1>Editing job</h1>
+
+<%= error_messages_for :job %>
+
+<% form_for(:job, :url => job_path(@job), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Who</b><br />
+    <%= f.text_field :who %>
+  </p>
+
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <b>Instructions</b><br />
+    <%= f.text_area :instructions %>
+  </p>
+
+  <p>
+    <b>Created at</b><br />
+    <%= f.date_select :created_at %>
+  </p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

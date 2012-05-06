@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Jobs: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'fonts' %>
+  <%= stylesheet_link_tag 'grids' %>
+  <%= javascript_include_tag :defaults %>
+  <style>
+     #hd {padding:10px;font-size:32px;font-weight:bold;}
+     #bd {padding:10px;align:center;}
+     #ft {margin-top:5px;text-align:center;}
+     .even { background: #efefef; }
+     .odd { background: #a5a5a5; }
+     #job-table {width:100%;}
+     #job-table td {padding:8px;}
+     #new-job {font-size:18px;font-weight:bold;background-color:yellow;}
+     #searchjobs input { font-size: 22px;}
+  </style>
+</head>
+<body>
+
+<div id="doc" class="yui-t7">
+   <div id="hd"><h1>1hourjobs.com</h1></div>
+   <div id="bd">
+       <div class="yui-g">
+           <p style="color: green"><%= flash[:notice] %></p>
+           <%= yield  %>
+       </div>
+   </div>
+   <div id="ft">about | blog | contact us</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+1hourjobs.com is a listing of jobs that take less then 1 hour to do.
+Start making your evenings pay.
+
+<br />
+<br />
+
+<table id="searchjobs" width="100%">
+             <tr>
+               <td>
+                 <b>Live Job Search</b><br />
+                 <%= text_field_tag :term, params[:term] %>
+                 <%= observe_field 'term',
+                                          :frequency => 1,
+                                          :update => :jobs,
+                                          :method => :get, 
+                                          :with => 'term' %>
+
+                 <br />
+               </td>
+               <td align="right">
+                 <%= link_to 'Post a new 1 hour job', new_job_path, :id => 'new-job' %><br />
+                 (it's totally free)
+               </td>
+             </tr>
+           </table>
+          <br />
+          <br />
+
+           <%= render :partial => 'jobs' %>
+</div>

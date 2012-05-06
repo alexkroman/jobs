@@ -1,0 +1,24 @@
+<div id="jobs">
+<table id="job-table">
+  <% if @jobs.length > 0 %>
+    <% for job in @jobs %>
+      <tr class="<%= cycle('odd','even') %>">
+        <td><%= link_to job.title, job_path(job) %> for <%=h job.name %></td>
+      </tr>
+    <% end %>
+  <% else %>
+      Nothing Here
+  <% end %>
+</table>
+
+<br />
+
+<%= if @job_pages.current.next
+      link_to("<< Earlier", :term =>  params[:term], :page => @job_pages.current.next )
+    end
+%>
+
+<%=  if @job_pages.current.previous
+       link_to("Later >>", :term  => params[:term], :page => @job_pages.current.previous )
+     end
+%>
